@@ -8,6 +8,6 @@ Enter your name here: Benjamin Stanley
 
 ## The best animals
 
-1. Cuttlefish
-2. Platypus
-3. Three-toed sloth
+1. Dog
+2. Sea lion
+3. Cat
