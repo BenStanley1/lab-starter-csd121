@@ -8,6 +8,9 @@ Enter your name here: Benjamin Stanley
 
 ## The best animals
 
-1. Dog
-2. Sea lion
-3. Cat
+1. Axolotl
+2. Bonobo
+3. Capybara
+4. Cat
+5. Dog
+6. Sea lion
