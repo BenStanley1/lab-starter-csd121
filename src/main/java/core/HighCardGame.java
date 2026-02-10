@@ -8,6 +8,11 @@
  */
 package core;
 
+// make dataset where each card has a value
+
+// make code so the card with a (>) value wins
+
+// give winner +1 point
 public class HighCardGame {
 
 }
