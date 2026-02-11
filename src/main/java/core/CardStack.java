@@ -12,8 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 public class CardStack {
-    List<Card> deck1;
-    List<Card> deck2;
+    static List<Card> deck1;
+    static List<Card> deck2;
 
     public static List<Card> makedeck() {
         ArrayList<Card> deck = new ArrayList<>();
@@ -28,8 +28,8 @@ public class CardStack {
     public static List<Card> splitdeck() {
         List<Card> deck = makedeck();
         Collections.shuffle(deck);
-        List<Card> deck1 = new ArrayList<>();
-        List<Card> deck2 = new ArrayList<>();
+        deck1 = new ArrayList<>();
+        deck2 = new ArrayList<>();
 
         for (int i = 0; i < deck.size(); i++) {
             Card card = deck.get(i);
@@ -40,15 +40,8 @@ public class CardStack {
             }
         }
 
+        return deck;
     }
-
-
-
-
-
-
-
-
 }
 
 

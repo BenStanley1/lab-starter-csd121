@@ -1,6 +1,12 @@
+import static ui.Console.prompt;
+
 public class Main {
 
     static void main() {
+        String user1 = prompt("User 1 whats your name?: ");
+        String user2 = prompt("User 2 whats your name?: ");
+
+
 
         /*
              Place your main game logic here.

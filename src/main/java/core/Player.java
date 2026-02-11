@@ -8,5 +8,26 @@
  */
 package core;
 
+
+import java.util.List;
+
 public class Player {
+    List<Card> hand;
+
+    public Player(List<Card> hand) {
+        this.hand = hand;
+    }
+    public void players() {
+        CardStack.splitdeck();
+        Player player1 = new Player(CardStack.deck1);
+        Player player2 = new Player(CardStack.deck2);
+
+    }
 }
+
+
+    // player must have deck of cards
+
+
+
+
