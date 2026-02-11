@@ -12,8 +12,10 @@ package core;
 import java.util.List;
 
 public class Player {
+    public int points;
     List<Card> hand;
-
+    
+    
     public Player(List<Card> hand) {
         this.hand = hand;
     }
@@ -21,12 +23,16 @@ public class Player {
         CardStack.splitdeck();
         Player player1 = new Player(CardStack.deck1);
         Player player2 = new Player(CardStack.deck2);
-
+        Card war1 =  CardStack.deck1.getFirst();
+        CardStack.deck1.removeFirst();
+        Card war2 =  CardStack.deck2.getFirst();
+        CardStack.deck2.removeFirst();
     }
+
+
 }
 
 
-    // player must have deck of cards
 
 
 
