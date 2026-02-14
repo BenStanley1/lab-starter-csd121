@@ -12,11 +12,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
 public class CardStack {
-    static List<Card> deck1;
-    static List<Card> deck2;
 
-    public static List<Card> makedeck() {
-        ArrayList<Card> deck = new ArrayList<>();
+    public static List<Card> makeDeck() {
+        List<Card> deck = new ArrayList<>();
         for (Card.Suit suit : Card.Suit.values()) {
             for (Card.Rank rank : Card.Rank.values()) {
                 deck.add(new Card(rank, suit));
@@ -25,23 +23,24 @@ public class CardStack {
         return deck;
     }
 
-    public static List<Card> splitdeck() {
-        List<Card> deck = makedeck();
-        Collections.shuffle(deck);
-        deck1 = new ArrayList<>();
-        deck2 = new ArrayList<>();
 
-        for (int i = 0; i < deck.size(); i++) {
-            Card card = deck.get(i);
-            if (i % 2 == 0) {
-                deck1.add(card);
-            } else {
-                deck2.add(card);
-            }
+    public static List<List<Card>> splitDeck(List<Card> fullDeck) {
+        Collections.shuffle(fullDeck);
+        List<Card> hand1 = new ArrayList<>();
+        List<Card> hand2 = new ArrayList<>();
+
+        for (int i = 0; i < fullDeck.size(); i++) {
+            if (i % 2 == 0) hand1.add(fullDeck.get(i));
+            else hand2.add(fullDeck.get(i));
         }
 
-        return deck;
+        List<List<Card>> hands = new ArrayList<>();
+        hands.add(hand1);
+        hands.add(hand2);
+
+        return hands;
     }
+
 }
 
 

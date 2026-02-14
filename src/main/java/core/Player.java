@@ -10,30 +10,32 @@ package core;
 
 
 import java.util.List;
+import java.util.Objects;
 
 public class Player {
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return points == player.points && Objects.equals(name, player.name) && Objects.equals(hand, player.hand);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, hand, points);
+    }
+
+    public String name;
+    public List<Card> hand;
     public int points;
-    List<Card> hand;
-    
-    
-    public Player(List<Card> hand) {
+
+    public Player(String name, List<Card> hand) {
+        this.name = name;
         this.hand = hand;
-    }
-    public void players() {
-        CardStack.splitdeck();
-        Player player1 = new Player(CardStack.deck1);
-        Player player2 = new Player(CardStack.deck2);
-        Card war1 =  CardStack.deck1.getFirst();
-        CardStack.deck1.removeFirst();
-        Card war2 =  CardStack.deck2.getFirst();
-        CardStack.deck2.removeFirst();
+        this.points = 0;
     }
 
-
+    public Card drawCard() {
+        return hand.removeFirst();
+    }
 }
-
-
-
-
-
-
