@@ -11,8 +11,12 @@ package core;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Collections;
-public class CardStack {
 
+public class CardStack {
+    /**
+     * Creates a deck with every card
+     * @return The 52 unique card deck
+     */
     public static List<Card> makeDeck() {
         List<Card> deck = new ArrayList<>();
         for (Card.Suit suit : Card.Suit.values()) {
@@ -23,7 +27,10 @@ public class CardStack {
         return deck;
     }
 
-
+    /**
+     * Splits a full deck in two halfs
+     * @return two hands of 26 unique cards
+     */
     public static List<List<Card>> splitDeck(List<Card> fullDeck) {
         Collections.shuffle(fullDeck);
         List<Card> hand1 = new ArrayList<>();

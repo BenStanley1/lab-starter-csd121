@@ -29,13 +29,22 @@ public class Player {
     public List<Card> hand;
     public int points;
 
+    /**
+     * assigns the name, hand, and points to a player.
+     */
     public Player(String name, List<Card> hand) {
+
         this.name = name;
         this.hand = hand;
         this.points = 0;
     }
 
+    /**
+     * draws a card from the hand
+     * @return the hand with one less card
+     */
     public Card drawCard() {
+
         return hand.removeFirst();
     }
 }

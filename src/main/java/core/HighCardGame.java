@@ -16,8 +16,11 @@ package core;
 
 public class HighCardGame {
 
-
+    /**
+     * each rank is given a value
+     */
     public int value(Card.Rank rank) {
+
         return switch (rank) {
             case TWO -> 2;
             case THREE -> 3;
@@ -35,7 +38,12 @@ public class HighCardGame {
         };
     }
 
+    /**
+     * compares each players card value
+     * @return player who had greater card
+     */
     public Player scoring(Card c1, Card c2, Player player1, Player player2) {
+
 
         int v1 = value(c1.rank());
         int v2 = value(c2.rank());
@@ -52,8 +60,12 @@ public class HighCardGame {
     }
 
 
-
+    /**
+     * Each player draws 1 card for war
+     * @return the winner
+     */
     public Object[] playOneRound(Player p1, Player p2) {
+
 
         Card c1 = p1.drawCard();
         Card c2 = p2.drawCard();
