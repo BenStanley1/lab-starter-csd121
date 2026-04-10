@@ -10,25 +10,18 @@ import java.io.OutputStream;
 import java.time.Instant;
 import java.util.List;
 
+
+
+
 public class Main {
 
     static void main(String[] args) {
 
-        Logger logger = new CensoriousLogger(List.of("hungrish", "drabblex", "clorphed", "snorvish", "grumblet", "flonky", "blarfish"));
+//        Logger logger = new CensoriousLogger(List.of("hungrish", "drabblex", "clorphed", "snorvish", "grumblet", "flonky", "blarfish"));
+        MemoryLogger logger = new MemoryLogger();
 
         try {
-
-
-
-            /* === Medium loggers === */
-            // TODO: Implement at least one of these
-//            Logger logger = new CensoriousLogger(List.of("hungrish", "drabblex", "clorphed", "snorvish", "grumblet", "flonky", "blarfish"));
-//            Logger logger = new MultiLogger(List.of(new ConsoleLogger(), new StreamLogger(new FileOutputStream("log.txt"))));
-//            Logger logger = new StreamLogger(System.out);                      // Using System.out as the destination
-//            Logger logger = new StreamLogger(new FileOutputStream("log.txt")); // Using a file as the destination
-
             // TODO: Implement MemoryLogger
-//            MemoryLogger logger = new MemoryLogger();
 
             // TODO: (Optional) Implement a JDBC logger
 //            Logger logger = new JdbcLogger("jdbc:sqlite:log.db");
@@ -38,7 +31,7 @@ public class Main {
             run(new CensoriousLogger((List.of("hungrish", "drabblex", "clorphed", "snorvish", "grumblet", "flonky", "blarfish"))),50);
 
             // TODO: uncomment this while you are trying out your MemoryLogger
-            // export(logger, new FileOutputStream("logs.txt"));  // OR try System.out as the second parameter!
+            ColorLogger.export(logger, new FileOutputStream("logs.txt"));  // OR try System.out as the second parameter!
 
         } catch (Exception e) {
             IO.println("Could not create log file: " + e.getMessage());
@@ -53,6 +46,5 @@ public class Main {
             logger.log(message, randomLevel);
         }
     }
-
 
 }
